@@ -1,13 +1,15 @@
 "use client";
 import React from "react";
-
-function VoiceTone() {
+interface VoiceToneProps {
+  gridItemsRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+}
+function VoiceTone({ gridItemsRefs }: VoiceToneProps) {
   return (
     <div
       ref={(el) => {
         gridItemsRefs.current[1] = el;
       }}
-      className="col-span-9 row-span-3 bg-yellow-300 p-4"
+      className="h-[42vh] w-[35vw] absolute left-[19.2vw] bg-yellow-300 p-4 hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold text-gray-800">Voice & Tone</div>
       <div className="flex justify-between items-center h-full">
