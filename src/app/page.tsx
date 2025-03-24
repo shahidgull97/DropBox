@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Head from "next/head";
 import Framework from "@/components/Framework";
 import VoiceTone from "@/components/VoiceTone";
+import Logo from "@/components/Logo";
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -15,7 +16,6 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const blueLogoRef = useRef<HTMLDivElement>(null);
   const gridItemsRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const logoRef = useRef(null);
 
   const lockRef = useRef(null);
   const shackleRef = useRef(null);
@@ -34,34 +34,6 @@ export default function Home() {
       y: 0, // Move back to locked position
       rotate: 0,
       duration: 0.5,
-      ease: "power2.inOut",
-    });
-  };
-
-  const handleMouseEnter = () => {
-    const boxes = gsap.utils.toArray("#dropboxLogo path");
-
-    gsap.to(boxes, {
-      scale: 1.2,
-      rotate: 15,
-      y: -10,
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.1,
-      ease: "power2.out",
-    });
-  };
-
-  const handleMouseLeave = () => {
-    const boxes = gsap.utils.toArray("#dropboxLogo path");
-
-    gsap.to(boxes, {
-      scale: 1,
-      rotate: 0,
-      y: 0,
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.1,
       ease: "power2.inOut",
     });
   };
@@ -186,31 +158,7 @@ export default function Home() {
           <VoiceTone gridItemsRefs={gridItemsRefs} />
 
           {/* Logo */}
-          <div
-            ref={(el) => {
-              gridItemsRefs.current[4] = el;
-            }}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className="h-[57vh] w-[24vw] absolute right-[20vw] bg-cyan-400 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
-          >
-            <div className="text-2xl font-bold">Logo</div>
-            <div className="flex items-center justify-center flex-1">
-              <svg
-                ref={logoRef}
-                id="dropboxLogo"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="-35.3175 -50 306.085 300"
-                className="w-40 h-40 text-blue-500 fill-current"
-              >
-                <path d="M58.86 75l58.87-37.5L58.86 0 0 37.5z" />
-                <path d="M176.59 75l58.86-37.5L176.59 0l-58.86 37.5z" />
-                <path d="M117.73 112.5L58.86 75 0 112.5 58.86 150z" />
-                <path d="M176.59 150l58.86-37.5L176.59 75l-58.86 37.5z" />
-                <path d="M176.59 162.5L117.73 125l-58.87 37.5 58.87 37.5z" />
-              </svg>
-            </div>
-          </div>
+          <Logo gridItemsRefs={gridItemsRefs} />
 
           {/* Typography */}
           <div
