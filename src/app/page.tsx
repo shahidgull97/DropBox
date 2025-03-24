@@ -9,7 +9,8 @@ import VoiceTone from "@/components/VoiceTone";
 import Logo from "@/components/Logo";
 import Typography from "@/components/Typography";
 import Iconography from "@/components/Iconography";
-import { Graduate } from "next/font/google";
+import Color from "@/components/Color";
+import Imagery from "@/components/Imagery";
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -148,20 +149,7 @@ export default function Home() {
           {/* Iconography */}
           <Iconography gridItemsRefs={gridItemsRefs} />
           {/* Color */}
-          <div
-            ref={(el) => {
-              gridItemsRefs.current[2] = el;
-            }}
-            className="h-[54.5vh] w-[26vw] absolute left-[19.2vw] bottom-2 bg-amber-700 p-4 hover:bg-black transition-colors duration-500 text-white "
-          >
-            <div className="text-2xl font-bold text-white">Color</div>
-            <div className="flex items-center justify-center h-full">
-              <div className="border-2 border-white p-5">
-                <div className="w-16 h-16 rounded-full border-2 border-white"></div>
-                <div className="w-16 h-16 rounded-full border-2 border-white mt-2"></div>
-              </div>
-            </div>
-          </div>
+          <Color gridItemsRefs={gridItemsRefs} />
           {/* Dropbox logo (Blue section) */}
           <div
             ref={(el) => {
@@ -190,21 +178,8 @@ export default function Home() {
           </div>
 
           {/* Imagery */}
-          <div
-            ref={(el) => {
-              gridItemsRefs.current[7] = el;
-            }}
-            className="h-[39.3vh] w-[33.2vw] absolute bottom-2 right-[19.9vw] bg-purple-800 p-4 flex flex-col justify-center hover:bg-black transition-colors duration-500 text-white "
-          >
-            <div className="text-2xl font-bold text-white">Imagery</div>
-            <div className="flex items-center justify-end flex-1">
-              <div className="bg-pink-300 w-32 h-32 rounded">
-                <div className="bg-pink-600 w-5 h-5 rounded-full m-2"></div>
-                <div className="bg-pink-600 h-12 w-full mt-10 rounded-tl-3xl rounded-tr-3xl"></div>
-              </div>
-            </div>
-          </div>
 
+          <Imagery gridItemsRefs={gridItemsRefs} />
           {/* Motion */}
           <div
             ref={(el) => {

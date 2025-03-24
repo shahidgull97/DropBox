@@ -1,12 +1,14 @@
 import React from "react";
-
-function Imagery() {
+interface ImageryProps {
+  gridItemsRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+}
+function Imagery({ gridItemsRefs }: ImageryProps) {
   return (
     <div
       ref={(el) => {
         gridItemsRefs.current[7] = el;
       }}
-      className="col-span-5 row-span-3 bg-purple-800 p-4 flex flex-col justify-between"
+      className="h-[39.3vh] w-[33.2vw] absolute bottom-2 right-[19.9vw] bg-purple-800 p-4 flex flex-col justify-center hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold text-white">Imagery</div>
       <div className="flex items-center justify-end flex-1">

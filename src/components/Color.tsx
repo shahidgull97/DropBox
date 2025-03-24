@@ -1,12 +1,14 @@
 import React from "react";
-
-function Color() {
+interface ColorProps {
+  gridItemsRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+}
+function Color({ gridItemsRefs }: ColorProps) {
   return (
     <div
       ref={(el) => {
         gridItemsRefs.current[2] = el;
       }}
-      className="col-span-7 row-span-3 bg-amber-700 p-4"
+      className="h-[54.5vh] w-[26vw] absolute left-[19.2vw] bottom-2 bg-amber-700 p-4 hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold text-white">Color</div>
       <div className="flex items-center justify-center h-full">
