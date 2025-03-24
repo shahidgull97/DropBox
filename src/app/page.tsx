@@ -7,6 +7,7 @@ import Head from "next/head";
 import Framework from "@/components/Framework";
 import VoiceTone from "@/components/VoiceTone";
 import Logo from "@/components/Logo";
+import Typography from "@/components/Typography";
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -161,17 +162,7 @@ export default function Home() {
           <Logo gridItemsRefs={gridItemsRefs} />
 
           {/* Typography */}
-          <div
-            ref={(el) => {
-              gridItemsRefs.current[5] = el;
-            }}
-            className="h-[40vh] w-[18.5vw] absolute right-2 top-2 bg-red-500 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
-          >
-            <div className="text-2xl font-bold">Typography</div>
-            <div className="flex items-center justify-center flex-1">
-              <span className="text-8xl font-bold text-gray-800">Aa</span>
-            </div>
-          </div>
+          <Typography gridItemsRefs={gridItemsRefs} />
 
           {/* Iconography */}
           <div
@@ -184,40 +175,6 @@ export default function Home() {
           >
             <div className="text-2xl font-bold">Iconography</div>
             <div className="flex items-center justify-center flex-1">
-              {/* <svg viewBox="0 0 100 100" className="w-24 h-24">
-                <rect
-                  x="25"
-                  y="30"
-                  width="50"
-                  height="45"
-                  rx="5"
-                  fill="#1E3A5F"
-                />
-                <rect
-                  x="45"
-                  y="25"
-                  width="10"
-                  height="10"
-                  rx="2"
-                  fill="#1E3A5F"
-                />
-                <circle
-                  cx="50"
-                  cy="55"
-                  r="8"
-                  fill="transparent"
-                  stroke="#1E3A5F"
-                  strokeWidth="4"
-                />
-                <rect
-                  x="45"
-                  y="50"
-                  width="10"
-                  height="15"
-                  rx="2"
-                  fill="#1E3A5F"
-                />
-              </svg> */}
               <svg
                 ref={lockRef}
                 xmlns="http://www.w3.org/2000/svg"
