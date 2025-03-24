@@ -2,19 +2,17 @@
 import React from "react";
 import { RefObject } from "react";
 
-type MotionProps = {
-  gridItemsRefs: RefObject<HTMLDivElement>[]; // Assuming an array of div refs
-};
+interface MotionProps {
+  gridItemsRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+}
 
 function Motion({ gridItemsRefs }: MotionProps) {
   return (
     <div
       ref={(el) => {
-        if (gridItemsRefs.current[8]) {
-          gridItemsRefs.current[8] = el as HTMLDivElement | null;
-        }
+        gridItemsRefs.current[8] = el;
       }}
-      className="col-span-4 row-span-3 bg-purple-300 p-4 flex flex-col justify-between"
+      className="h-[56vh] w-[18.5vw] absolute bottom-2 right-2 bg-purple-300 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Motion</div>
       <div className="flex items-center justify-center flex-1">
