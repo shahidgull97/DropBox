@@ -1,31 +1,196 @@
 "use client";
 import React from "react";
 import { RefObject } from "react";
-
+import { useRef } from "react";
+import gsap from "gsap";
 interface MotionProps {
   gridItemsRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
 }
 
 function Motion({ gridItemsRefs }: MotionProps) {
+  const svgRef = useRef<SVGSVGElement>(null);
+  const pathRef = useRef<SVGPathElement>(null);
+  const topLeftRectRef = useRef<SVGRectElement>(null);
+  const topRighttRectRef = useRef<SVGRectElement>(null);
+  const bottomRightRectRef = useRef<SVGRectElement>(null);
+  const bottomLeftRectRef = useRef<SVGRectElement>(null);
+  const topLineRef = useRef<SVGLineElement>(null);
+  const bottomLineRef = useRef<SVGLineElement>(null);
+
+  const handleMouseEnter = () => {
+    gsap.to(topLeftRectRef.current, {
+      x: -10,
+      duration: 0.5,
+      ease: "power2.out",
+      stroke: "white",
+      strokeWidth: 1,
+      fill: "none",
+    });
+    gsap.to(topRighttRectRef.current, {
+      stroke: "white",
+      strokeWidth: 1,
+      fill: "none",
+    });
+    gsap.to(bottomRightRectRef.current, {
+      x: 15,
+      duration: 0.5,
+      ease: "power2.out",
+      stroke: "white",
+      strokeWidth: 1,
+      fill: "none",
+    });
+    gsap.to(bottomLeftRectRef.current, {
+      stroke: "white",
+      strokeWidth: 1,
+      fill: "none",
+    });
+
+    gsap.to(topLineRef.current, {
+      attr: { x1: 58 },
+      duration: 0.5,
+      ease: "power2.out",
+      stroke: "white",
+    });
+    gsap.to(bottomLineRef.current, {
+      attr: { x2: 45 },
+      duration: 0.5,
+      ease: "power2.out",
+      stroke: "white",
+    });
+
+    gsap.to(pathRef.current, {
+      attr: { d: "M10 113 C60 100, 40 0, 90 -10" }, // More S-like curve
+      duration: 0.5,
+      ease: "power2.out",
+      stroke: "white",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(topLeftRectRef.current, {
+      x: 0,
+      duration: 0.5,
+      ease: "power2.in",
+      strokeWidth: 0,
+      fill: "purple",
+    });
+    gsap.to(topRighttRectRef.current, {
+      strokeWidth: 0,
+      fill: "purple",
+      ease: "power2.in",
+      duration: 0.5,
+    });
+    gsap.to(bottomRightRectRef.current, {
+      x: 0,
+      duration: 0.5,
+      ease: "power2.in",
+      fill: "purple",
+      strokeWidth: 0,
+    });
+    gsap.to(bottomLeftRectRef.current, {
+      strokeWidth: 0,
+      fill: "purple",
+      ease: "power2.in",
+      duration: 0.5,
+    });
+
+    gsap.to(topLineRef.current, {
+      attr: { x1: 60 },
+      duration: 0.5,
+      ease: "power2.in",
+      stroke: "purple",
+    });
+    gsap.to(bottomLineRef.current, {
+      attr: { x2: 30 },
+      duration: 0.5,
+      ease: "power2.in",
+      stroke: "purple",
+    });
+
+    gsap.to(pathRef.current, {
+      attr: { d: "M10 113 C40 100, 60 0, 90 -10" }, // Back to original
+      duration: 0.5,
+      ease: "power2.in",
+      stroke: "purple",
+    });
+  };
+
   return (
     <div
       ref={(el) => {
         gridItemsRefs.current[8] = el;
       }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className="h-[56vh] w-[18.5vw] absolute bottom-2 right-2 bg-purple-300 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Motion</div>
       <div className="flex items-center justify-center flex-1">
-        <svg viewBox="0 0 100 100" className="w-full h-32">
+        <svg ref={svgRef} viewBox="0 0 100 100" className="w-full h-full">
           <path
-            d="M20 70 C40 20, 60 120, 80 30"
+            ref={pathRef}
+            d="M10 113 C40 100, 60 0, 90 -10"
             stroke="purple"
-            strokeWidth="2"
+            strokeWidth="1"
             fill="transparent"
           />
-          <circle cx="20" cy="70" r="5" fill="purple" />
-          <circle cx="80" cy="30" r="5" fill="purple" />
-          <circle cx="50" cy="50" r="5" fill="purple" />
+
+          <line
+            ref={topLineRef}
+            x1="62"
+            y1="-10"
+            x2="90"
+            y2="-10"
+            style={{ stroke: "purple", strokeWidth: 1 }}
+          />
+          <line
+            ref={bottomLineRef}
+            x1="10"
+            y1="114"
+            x2="30"
+            y2="114"
+            style={{ stroke: "purple", strokeWidth: 1 }}
+          />
+          <rect
+            ref={topRighttRectRef}
+            width="8"
+            height="8"
+            x="90"
+            y="-15"
+            rx="3"
+            ry="3"
+            fill="purple"
+          />
+          <rect
+            ref={topLeftRectRef}
+            width="8"
+            height="8"
+            x="60"
+            y="-15"
+            rx="3"
+            ry="3"
+            fill="purple"
+          />
+          <rect
+            ref={bottomLeftRectRef}
+            width="8"
+            height="8"
+            x="2"
+            y="110"
+            rx="3"
+            ry="3"
+            fill="purple"
+          />
+          <rect
+            ref={bottomRightRectRef}
+            width="8"
+            height="8"
+            x="30"
+            y="110"
+            rx="3"
+            ry="3"
+            fill="purple"
+          />
         </svg>
       </div>
     </div>
