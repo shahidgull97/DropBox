@@ -24,115 +24,6 @@ export default function Home() {
   const gridItemsRefs = useRef<(HTMLDivElement | null)[]>([]);
   const svgRef = useRef<SVGSVGElement>(null);
 
-  // useEffect(() => {
-  //   if (!containerRef.current) return;
-
-  //   const container = containerRef.current;
-  //   const blueLogo = blueLogoRef.current;
-  //   const gridItems = gridItemsRefs.current.filter(Boolean);
-  //   const textElement = blueLogo ? blueLogo.querySelector("h2") : null;
-  //   // Create a timeline for the animation
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: container,
-  //       start: "top top",
-  //       end: "bottom top",
-  //       scrub: true,
-  //       pin: true,
-  //       anticipatePin: 1,
-  //     },
-  //   });
-
-  //   // Zoom effect for the blue logo section
-  //   tl.to(
-  //     blueLogo,
-  //     {
-  //       scale: 1.5,
-  //       zIndex: 50,
-  //       duration: 1,
-  //     },
-  //     0
-  //   );
-
-  //   // Move other grid items away from center and fade them out
-  //   gridItems.forEach((item, index) => {
-  //     if (item === blueLogo) return;
-
-  //     // Calculate direction based on position relative to blue logo
-  //     const rect = item?.getBoundingClientRect();
-  //     const blueRect = blueLogo?.getBoundingClientRect() || { left: 0, top: 0 };
-
-  //     const xDirection =
-  //       rect?.left && blueRect.left && rect.left > blueRect.left ? 1 : -1;
-  //     const yDirection =
-  //       rect?.top && blueRect.top && rect.top > blueRect.top ? 1 : -1;
-  //     console.log(xDirection);
-  //     console.log(yDirection);
-
-  //     // Move elements away from center with increasing gap
-  //     tl.to(
-  //       item,
-  //       {
-  //         x: `${xDirection * (50 + index * 10)}vw`,
-  //         y: `${yDirection * (50 + index * 5)}vh`,
-  //         opacity: 1,
-  //         scale: 0.8,
-  //         duration: 2,
-  //       },
-  //       0
-  //     );
-  //     // Scale blue div while elements are moving
-  //     tl.to(
-  //       blueLogo,
-  //       {
-  //         width: "15vw",
-  //         height: "30vh",
-  //         duration: 2,
-  //         x: "-50%",
-  //         y: "-50%",
-  //         ease: "power2.out",
-  //         scrollTrigger: {
-  //           trigger: blueLogo,
-  //           start: "top center",
-  //           end: "bottom center",
-  //           toggleActions: "play none none reverse",
-  //           onUpdate: (self) => {
-  //             // This gives more precise control over the text visibility
-  //             // based on the scroll progress
-  //             if (textElement) {
-  //               if (self.progress > 0.5 && textElement.textContent === "") {
-  //                 // When we're halfway through the animation, show the text
-  //                 textElement.textContent = "New Text";
-  //                 gsap.to(textElement, { opacity: 1, duration: 0.5 });
-  //               } else if (
-  //                 self.progress < 0.5 &&
-  //                 textElement.textContent !== ""
-  //               ) {
-  //                 // When we're less than halfway, hide the text
-  //                 gsap.to(textElement, {
-  //                   opacity: 0,
-  //                   duration: 0.5,
-  //                   onComplete: () => {
-  //                     textElement.textContent = "";
-  //                   },
-  //                 });
-  //               }
-  //             }
-  //           },
-  //         },
-  //       },
-  //       0
-  //     ); // Start at the same time as elements moving
-  //   });
-
-  //   return () => {
-  //     // Clean up
-  //     if (tl.scrollTrigger) {
-  //       tl.scrollTrigger.kill();
-  //     }
-  //   };
-  // }, []);
-
   useEffect(() => {
     if (!containerRef.current || !blueLogoRef.current) return;
 
@@ -275,7 +166,7 @@ export default function Home() {
       ); // Start at the same time
     });
 
-    // **3️⃣ Reverse Animation when scrolling back up**
+    // ** Reverse Animation when scrolling back up**
     ScrollTrigger.create({
       trigger: container,
       start: "top top",

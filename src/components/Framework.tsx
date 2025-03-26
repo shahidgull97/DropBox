@@ -178,28 +178,6 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
           <circle cx="90" cy="60" r="3" fill="white" />
           <circle cx="10" cy="110" r="3" fill="white" />
         </svg>
-
-        {/* <svg viewBox="0 0 100 100" className="w-full h-80">
-          <line
-            x1="10"
-            y1="20"
-            x2="90"
-            y2="60"
-            stroke="white"
-            strokeWidth="1"
-          />
-          <line
-            x1="10"
-            y1="110"
-            x2="90"
-            y2="60"
-            stroke="white"
-            strokeWidth="1"
-          />
-          <circle cx="10" cy="20" r="3" fill="white" />
-          <circle cx="90" cy="60" r="3" fill="white" />
-          <circle cx="10" cy="110" r="3" fill="white" />
-        </svg> */}
       </div>
     </div>
   );
