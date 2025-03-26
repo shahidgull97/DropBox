@@ -41,7 +41,7 @@ function Logo({ gridItemsRefs }: LogoProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[57vh] w-[24vw] absolute right-[20vw] bg-cyan-400 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
+      className="h-[56vh] w-[24.8vw] absolute right-[20vw] bg-cyan-400 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Logo</div>
       <div className="flex items-center justify-center flex-1">

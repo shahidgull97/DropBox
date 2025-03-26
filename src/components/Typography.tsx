@@ -34,7 +34,7 @@ function Typography({ gridItemsRefs }: TypographyProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[40vh] w-[18.5vw] absolute right-2 top-2 bg-orange-600 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
+      className="h-[40vh] w-[18.8vw] absolute right-2 top-2 bg-orange-600 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-4xl font-bold text-red-900">Typography</div>
       <div className="flex items-end justify-end flex-1">

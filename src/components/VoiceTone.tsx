@@ -37,7 +37,7 @@ function VoiceTone({ gridItemsRefs }: VoiceToneProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[42vh] w-[35vw] absolute left-[19.2vw] bg-yellow-300 p-4 hover:bg-black transition-colors duration-500 text-white "
+      className="h-[41vh] w-[34.3vw] absolute left-[19.2vw] bg-yellow-300 p-4 hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold text-gray-800">Voice & Tone</div>
       <div className="flex justify-between items-center h-full">

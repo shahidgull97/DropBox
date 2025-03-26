@@ -122,7 +122,7 @@ function Motion({ gridItemsRefs }: MotionProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[56vh] w-[18.5vw] absolute bottom-2 right-2 bg-purple-300 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
+      className="h-[56vh] w-[18.8vw] absolute bottom-2 right-2 bg-purple-300 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Motion</div>
       <div className="flex items-center justify-center flex-1">

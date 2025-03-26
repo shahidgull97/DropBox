@@ -169,7 +169,7 @@ function Imagery({ gridItemsRefs }: ImageryProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[39.3vh] w-[33.2vw] absolute bottom-2 right-[19.9vw] bg-purple-800 p-4 flex flex-col justify-center hover:bg-black transition-colors duration-500 text-white "
+      className="h-[40.5vh] w-[33.7vw] absolute bottom-2 right-[19.9vw] bg-purple-800 p-4 flex flex-col justify-center hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold text-white">Imagery</div>
       <div

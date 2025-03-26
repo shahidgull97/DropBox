@@ -97,7 +97,8 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
             ref={(el) => {
               el && (curvedLinesRef.current[0] = el);
             }}
-            d="M10 20 Q50 5, 90 60"
+            // d="M10 20 Q50 5, 90 60"
+            d="M100,100q40,10,50,20t0,20q-20,0-20-10t10-10q10-10,20,0t10,20l10,20l10-10"
             stroke="white"
             strokeWidth="2"
             fill="none"
@@ -105,6 +106,26 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
             strokeDasharray="100"
             strokeDashoffset="100"
             opacity="0" // Start fully hidden
+          />
+          <path
+            d="M10 110 
+           Q40 140, 60 100 
+           Q80 60, 50 50 
+           Q30 40, 60 20 
+           Q90 10, 130 50"
+            stroke="black"
+            strokeWidth="3"
+            fill="none"
+            strokeLinecap="round"
+          />
+
+          {/* Arrowhead at the End */}
+          <path
+            d="M120 40 L130 50 L135 35"
+            stroke="black"
+            strokeWidth="3"
+            fill="none"
+            strokeLinecap="round"
           />
 
           <path

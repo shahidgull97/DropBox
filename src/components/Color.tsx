@@ -62,7 +62,7 @@ function Color({ gridItemsRefs }: ColorProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[54.5vh] w-[26vw] absolute left-[19.2vw] bottom-2 bg-amber-600 p-4 hover:bg-black transition-colors duration-500 text-white "
+      className="h-[55.5vh] w-[25.5vw] absolute left-[19.2vw] bottom-2 bg-amber-600 p-4 hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold text-white">Color</div>
       <div className="flex flex-col items-end justify-end h-full mb-2">
