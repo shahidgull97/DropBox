@@ -12,7 +12,72 @@ interface FrameworkProps {
 function Framework({ gridItemsRefs }: FrameworkProps) {
   const straightLinesRef = useRef<SVGPathElement[]>([]);
   const curvedLinesRef = useRef<SVGPathElement[]>([]);
+  const arrowRef = useRef<SVGPolygonElement[]>([]);
+  const arrowRef2 = useRef<SVGPolygonElement>(null);
 
+  // const handleHover = () => {
+  //   // Hide straight lines
+  //   straightLinesRef.current.forEach((line) => {
+  //     gsap.to(line, {
+  //       opacity: 0, // Hide the straight lines
+  //       duration: 0.3,
+  //       ease: "power2.out",
+  //     });
+  //   });
+
+  //   // Draw curved lines & fade them in
+  //   curvedLinesRef.current.forEach((path) => {
+  //     gsap.to(path, {
+  //       strokeDashoffset: 0, // Reveal the curve
+  //       opacity: 1, // Make the curve fully visible
+  //       duration: 1.2,
+  //       ease: "power2.out",
+  //     });
+  //   });
+
+  //   // Draw arrows
+  //   arrowRef.current.forEach((path) => {
+  //     gsap.to(path, {
+  //       strokeDashoffset: 0,
+  //       opacity: 1,
+  //       duration: 1.2,
+  //       ease: "power2.out",
+  //     });
+  //   });
+  // };
+
+  // const handleLeave = () => {
+  //   // Show straight lines again
+  //   straightLinesRef.current.forEach((line) => {
+  //     gsap.to(line, {
+  //       opacity: 1, // Show the straight lines
+  //       duration: 0.3,
+  //       ease: "power2.in",
+  //     });
+  //   });
+
+  //   // Retract curved lines & fade them out
+
+  //   curvedLinesRef.current.forEach((path) => {
+  //     gsap.to(path, {
+  //       strokeDashoffset: 100, // Retract the curve smoothly
+  //       duration: 0.8, // Optimal speed to avoid flickering
+  //       ease: "power2.in",
+  //       onComplete: () => {
+  //         gsap.set(path, { opacity: 0, strokeDasharray: "none" }); // Instantly hide after animation
+  //       },
+  //     });
+  //   });
+  //   // Draw arrows
+  //   arrowRef.current.forEach((path) => {
+  //     gsap.to(path, {
+  //       strokeDashoffset: 100,
+  //       opacity: 0,
+  //       duration: 1.2,
+  //       ease: "power2.out",
+  //     });
+  //   });
+  // };
   const handleHover = () => {
     // Hide straight lines
     straightLinesRef.current.forEach((line) => {
@@ -23,11 +88,33 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
       });
     });
 
-    // Draw curved lines & fade them in
+    // Reset curved lines before animating
     curvedLinesRef.current.forEach((path) => {
+      gsap.set(path, {
+        strokeDasharray: path.getTotalLength(),
+        strokeDashoffset: path.getTotalLength(),
+        opacity: 0,
+      });
+
       gsap.to(path, {
         strokeDashoffset: 0, // Reveal the curve
         opacity: 1, // Make the curve fully visible
+        duration: 1.2,
+        ease: "power2.out",
+      });
+    });
+
+    // Reset and animate arrows
+    arrowRef.current.forEach((path) => {
+      gsap.set(path, {
+        strokeDasharray: path.getTotalLength(),
+        strokeDashoffset: path.getTotalLength(),
+        opacity: 0,
+      });
+
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        opacity: 1,
         duration: 1.2,
         ease: "power2.out",
       });
@@ -45,15 +132,24 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
     });
 
     // Retract curved lines & fade them out
-
     curvedLinesRef.current.forEach((path) => {
       gsap.to(path, {
-        strokeDashoffset: 100, // Retract the curve smoothly
-        duration: 0.8, // Optimal speed to avoid flickering
+        strokeDashoffset: path.getTotalLength(), // Retract the curve smoothly
+        duration: 0.3,
         ease: "power2.in",
         onComplete: () => {
-          gsap.set(path, { opacity: 0, strokeDasharray: "none" }); // Instantly hide after animation
+          gsap.set(path, { opacity: 0 }); // Fully hide after animation
         },
+      });
+    });
+
+    // Retract arrows
+    arrowRef.current.forEach((path) => {
+      gsap.to(path, {
+        strokeDashoffset: path.getTotalLength(),
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
       });
     });
   };
@@ -97,8 +193,7 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
             ref={(el) => {
               el && (curvedLinesRef.current[0] = el);
             }}
-            // d="M10 20 Q50 5, 90 60"
-            d="M100,100q40,10,50,20t0,20q-20,0-20-10t10-10q10-10,20,0t10,20l10,20l10-10"
+            d="M10 20 Q50 5, 80 50"
             stroke="white"
             strokeWidth="2"
             fill="none"
@@ -107,32 +202,22 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
             strokeDashoffset="100"
             opacity="0" // Start fully hidden
           />
-          <path
-            d="M10 110 
-           Q40 140, 60 100 
-           Q80 60, 50 50 
-           Q30 40, 60 20 
-           Q90 10, 130 50"
-            stroke="black"
-            strokeWidth="3"
+          <polygon
+            ref={(el) => {
+              el && (arrowRef.current[0] = el);
+            }}
+            points="85,48 85,55 77,54"
             fill="none"
-            strokeLinecap="round"
-          />
-
-          {/* Arrowhead at the End */}
-          <path
-            d="M120 40 L130 50 L135 35"
-            stroke="black"
-            strokeWidth="3"
-            fill="none"
-            strokeLinecap="round"
+            stroke="white"
+            strokeWidth="2"
+            opacity="0"
           />
 
           <path
             ref={(el) => {
               el && (curvedLinesRef.current[1] = el);
             }}
-            d="M10 110 Q50 120, 90 60"
+            d="M90 60 Q50 120, 23 110"
             stroke="white"
             strokeWidth="2"
             fill="none"
@@ -141,7 +226,16 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
             strokeDashoffset="100"
             opacity="0" // Start fully hidden
           />
-
+          <polygon
+            ref={(el) => {
+              el && (arrowRef.current[1] = el);
+            }}
+            points="23,105 15,110 23,115"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+            opacity="0"
+          />
           {/* Dots at Start & End */}
           <circle cx="10" cy="20" r="3" fill="white" />
           <circle cx="90" cy="60" r="3" fill="white" />
