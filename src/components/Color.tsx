@@ -62,13 +62,14 @@ function Color({ gridItemsRefs }: ColorProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[55.5vh] w-[25.5vw] absolute left-[19.2vw] bottom-2 bg-amber-600 p-4 hover:bg-black transition-colors duration-500 text-white "
+      className="absolute sm:h-[20vh] sm:w-[53vw]  lg:h-[55.5vh] lg:w-[26.5vw] sm:left-[46.3vw] lg:left-[19.2vw] sm:bottom-[22.3vh] lg:bottom-2 bg-amber-600 p-4 hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold text-white">Color</div>
-      <div className="flex flex-col items-end justify-end h-full mb-2">
+      <div className="flex flex-col items-end justify-end w-full h-full mb-2 relative">
         <div
           ref={div1Ref}
-          className="  p-2 w-17 h-17 bg-amber-700 absolute right-[6vw] bottom-[11vh] items-center justify-center"
+          //  p-2 w-[5vw] h-[10vh] bg-amber-700  right-[6vw] bottom-[11vh] items-center justify-center
+          className="absolute p-2 sm:w-[3vw] sm:h-[5vh] lg:w-[20%] lg:h-[20%] bg-amber-700 sm:right-[9%] lg:right-[22%] sm:bottom-[55%] lg:bottom-[30%] flex items-center justify-center "
         >
           <div
             ref={innediv1Ref}
@@ -77,7 +78,7 @@ function Color({ gridItemsRefs }: ColorProps) {
         </div>
         <div
           ref={div2Ref}
-          className=" bg-amber-900 p-2 w-17 h-17 mb-6 items-center justify-center"
+          className=" absolute bg-amber-900 p-2 sm:w-[3vw] sm:h-[5vh] lg:w-[20%] lg:h-[20%] right-[2%] bottom-[5%] flex items-center justify-center mb-4"
         >
           <div
             ref={innerdiv2Ref}

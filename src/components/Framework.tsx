@@ -13,71 +13,8 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
   const straightLinesRef = useRef<SVGPathElement[]>([]);
   const curvedLinesRef = useRef<SVGPathElement[]>([]);
   const arrowRef = useRef<SVGPolygonElement[]>([]);
-  const arrowRef2 = useRef<SVGPolygonElement>(null);
+  const circleRef = useRef<SVGCircleElement[]>([]);
 
-  // const handleHover = () => {
-  //   // Hide straight lines
-  //   straightLinesRef.current.forEach((line) => {
-  //     gsap.to(line, {
-  //       opacity: 0, // Hide the straight lines
-  //       duration: 0.3,
-  //       ease: "power2.out",
-  //     });
-  //   });
-
-  //   // Draw curved lines & fade them in
-  //   curvedLinesRef.current.forEach((path) => {
-  //     gsap.to(path, {
-  //       strokeDashoffset: 0, // Reveal the curve
-  //       opacity: 1, // Make the curve fully visible
-  //       duration: 1.2,
-  //       ease: "power2.out",
-  //     });
-  //   });
-
-  //   // Draw arrows
-  //   arrowRef.current.forEach((path) => {
-  //     gsap.to(path, {
-  //       strokeDashoffset: 0,
-  //       opacity: 1,
-  //       duration: 1.2,
-  //       ease: "power2.out",
-  //     });
-  //   });
-  // };
-
-  // const handleLeave = () => {
-  //   // Show straight lines again
-  //   straightLinesRef.current.forEach((line) => {
-  //     gsap.to(line, {
-  //       opacity: 1, // Show the straight lines
-  //       duration: 0.3,
-  //       ease: "power2.in",
-  //     });
-  //   });
-
-  //   // Retract curved lines & fade them out
-
-  //   curvedLinesRef.current.forEach((path) => {
-  //     gsap.to(path, {
-  //       strokeDashoffset: 100, // Retract the curve smoothly
-  //       duration: 0.8, // Optimal speed to avoid flickering
-  //       ease: "power2.in",
-  //       onComplete: () => {
-  //         gsap.set(path, { opacity: 0, strokeDasharray: "none" }); // Instantly hide after animation
-  //       },
-  //     });
-  //   });
-  //   // Draw arrows
-  //   arrowRef.current.forEach((path) => {
-  //     gsap.to(path, {
-  //       strokeDashoffset: 100,
-  //       opacity: 0,
-  //       duration: 1.2,
-  //       ease: "power2.out",
-  //     });
-  //   });
-  // };
   const handleHover = () => {
     // Hide straight lines
     straightLinesRef.current.forEach((line) => {
@@ -99,7 +36,7 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
       gsap.to(path, {
         strokeDashoffset: 0, // Reveal the curve
         opacity: 1, // Make the curve fully visible
-        duration: 1.2,
+        duration: 0.8,
         ease: "power2.out",
       });
     });
@@ -161,11 +98,11 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
       }}
       onMouseEnter={handleHover}
       onMouseLeave={handleLeave}
-      className="h-[55vh] w-[18vw] absolute left-2 bg-gray-800 text-white p-1 flex flex-col justify-between hover:bg-black transition-colors duration-500"
+      className="absolute sm:h-[20vh] sm:w-[40vw] lg:h-[55vh] lg:w-[18vw]   left-2 bg-gray-800 text-white p-1 flex flex-col justify-between hover:bg-black transition-colors duration-500 "
     >
       <div className="text-2xl font-bold">Framework</div>
-      <div className="flex items-center justify-center flex-1 w-full">
-        <svg viewBox="0 0 100 120" className="w-64 h-64">
+      <div className="flex items-center justify-center flex-1 w-full h-full overflow-hidden">
+        <svg viewBox="0 0 100 120" className="w-full h-full">
           {/* Straight Lines (Initially Visible) */}
           <path
             ref={(el) => {

@@ -185,7 +185,7 @@ export default function Home() {
     // **Blue div shrinks**
 
     scrollTl.to(blueLogo, {
-      width: "8.3vw",
+      width: "7.2vw",
       height: "13vh",
       duration: 2,
       ease: "power2.out",
@@ -353,7 +353,7 @@ export default function Home() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="-35.3175 -50 306.085 300"
               // fixed left-0 bottom-0
-              className="w-[15vw] h-[15vh] relative left-0 bottom-0 text-blue-500 fill-current"
+              className="w-[10vw] h-[10vh] relative left-0 bottom-0 text-blue-500 fill-current"
             >
               <path d="M58.86 75l58.87-37.5L58.86 0 0 37.5z" />
               <path d="M176.59 75l58.86-37.5L176.59 0l-58.86 37.5z" />

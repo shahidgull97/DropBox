@@ -41,16 +41,16 @@ function Logo({ gridItemsRefs }: LogoProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[56vh] w-[24.8vw] absolute right-[20vw] bg-cyan-400 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
+      className="absolute sm:h-[20vh] sm:w-[53vw] lg:h-[56vh] lg:w-[25.8vw]   sm:top-[22vh] lg:top-2 sm:right-[46.2vw]  lg:right-[20vw]   bg-cyan-400 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Logo</div>
-      <div className="flex items-center justify-center flex-1">
+      <div className="flex items-center justify-center flex-1 w-full h-full overflow:hidden">
         <svg
           ref={logoRef}
           id="dropboxLogo"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="-35.3175 -50 306.085 300"
-          className="w-40 h-40 text-blue-500 fill-current"
+          className="w-1/2 h-1/2 text-blue-500 fill-current"
         >
           <path d="M58.86 75l58.87-37.5L58.86 0 0 37.5z" />
           <path d="M176.59 75l58.86-37.5L176.59 0l-58.86 37.5z" />

@@ -33,16 +33,16 @@ function Iconography({ gridItemsRefs }: IconographyProps) {
       }}
       onMouseEnter={lockMouseEnter}
       onMouseLeave={lockMouseLeave}
-      className="h-[41.5vh] w-[18vw] absolute bottom-2 left-2 bg-lime-500 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
+      className="absolute sm:h-[34.5vh] sm:w-[45vw] lg:h-[41.5vh] lg:w-[18vw]  sm:bottom-[22.4vh] lg:bottom-2 left-2 bg-lime-500 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Iconography</div>
-      <div className="flex items-center justify-center flex-1">
+      <div className="flex items-center justify-center w-full h-full flex-1">
         <svg
           ref={lockRef}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-24 h-24 text-yellow-400"
+          className="sm:w-1/4 lg:w-1/2 sm:h-1/2 lg:h-full text-yellow-400"
         >
           {/* Lock Shackle */}
           <path

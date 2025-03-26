@@ -169,19 +169,19 @@ function Imagery({ gridItemsRefs }: ImageryProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[40.5vh] w-[33.7vw] absolute bottom-2 right-[19.9vw] bg-purple-800 p-4 flex flex-col justify-center hover:bg-black transition-colors duration-500 text-white "
+      className="absolute sm:h-[20vh] sm:w-[50vw]  lg:h-[40.5vh] lg:w-[33.7vw]  bottom-2 sm:right-[49vw] lg:right-[19.9vw] bg-purple-800 p-4 flex flex-col justify-center hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold text-white">Imagery</div>
       <div
         ref={divRef}
-        className="flex items-center justify-end flex-1 border-r-gray-200"
+        className="flex items-center justify-end flex-1 border-r-gray-200 w-full h-full overflow-hidden"
       >
         {/* <div className="bg-pink-300 w-32 h-32 rounded"> */}
         {/* Sun */}
         <svg
           ref={bgRef}
           viewBox="0 0 220 180"
-          className="w-[170px] h-auto bg-amber-50"
+          className="sm:w-[16 %] lg:w-[50%] h-[85%] sm:mr-3 lg:mr-0 bg-amber-50"
         >
           {/* Background Rectangle */}
           {/* <rect
