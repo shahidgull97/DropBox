@@ -22,7 +22,7 @@ function Color({ gridItemsRefs }: ColorProps) {
     gsap.to(div2Ref.current, {
       border: "2px white solid",
       backgroundColor: "black",
-      x: -62,
+      x: -70,
       ease: "power2,out",
     });
     gsap.to(innediv1Ref.current, {
