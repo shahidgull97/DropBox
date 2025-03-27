@@ -12,13 +12,6 @@ function Logo({ gridItemsRefs }: LogoProps) {
 
     gsap.to(
       boxes,
-      // scale: 1.2,
-      // rotate: 15,
-      // y: -10,
-      // opacity: 1,
-      // duration: 0.5,
-      // stagger: 0.1,
-      // ease: "power2.out",
 
       {
         y: -30, // Move up
@@ -32,26 +25,12 @@ function Logo({ gridItemsRefs }: LogoProps) {
     );
   };
 
-  // const handleMouseLeave = () => {
-  //   const boxes = gsap.utils.toArray("#dropboxLogo path");
-
-  //   gsap.to(boxes, {
-  //     scale: 1,
-  //     rotate: 0,
-  //     y: 0,
-  //     opacity: 1,
-  //     duration: 0.5,
-  //     stagger: 0.1,
-  //     ease: "power2.inOut",
-  //   });
-  // };
   return (
     <div
       ref={(el) => {
         gridItemsRefs.current[4] = el;
       }}
       onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
       className="absolute sm:h-[20vh] sm:w-[53vw] xl:h-[56vh] xl:w-[25.8vw]   sm:top-[22vh] xl:top-2 sm:right-[46.2vw]  xl:right-[20vw]   bg-cyan-400 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Logo</div>

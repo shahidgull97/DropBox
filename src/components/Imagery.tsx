@@ -1,5 +1,5 @@
-import React, { useReducer } from "react";
-import { useEffect, useState, useRef } from "react";
+import React from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { RefObject } from "react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
