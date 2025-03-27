@@ -119,7 +119,7 @@ export default function Home() {
     });
 
     // **Move all grid items radially inwards**
-    gridItems.forEach((item, index) => {
+    gridItems.forEach((item) => {
       if (!item) return;
 
       scrollTl.to(

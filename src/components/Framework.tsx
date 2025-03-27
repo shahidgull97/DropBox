@@ -12,7 +12,6 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
   const straightLinesRef = useRef<SVGPathElement[]>([]);
   const curvedLinesRef = useRef<SVGPathElement[]>([]);
   const arrowRef = useRef<SVGPolygonElement[]>([]);
-  const circleRef = useRef<SVGCircleElement[]>([]);
 
   const handleHover = () => {
     // Hide straight lines
