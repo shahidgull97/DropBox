@@ -146,7 +146,7 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
           <polygon
             ref={(el) => {
               if (el) {
-                curvedLinesRef.current[0] = el;
+                arrowRef.current[0] = el;
               }
             }}
             points="85,48 85,55 77,54"
@@ -174,7 +174,7 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
           <polygon
             ref={(el) => {
               if (el) {
-                curvedLinesRef.current[1] = el;
+                arrowRef.current[1] = el;
               }
             }}
             points="23,105 15,110 23,115"
