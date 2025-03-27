@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import gsap from "gsap";
+
 interface IconographyProps {
   gridItemsRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
 }
@@ -33,7 +34,7 @@ function Iconography({ gridItemsRefs }: IconographyProps) {
       }}
       onMouseEnter={lockMouseEnter}
       onMouseLeave={lockMouseLeave}
-      className="absolute sm:h-[34.5vh] sm:w-[45vw] lg:h-[41.5vh] lg:w-[18vw]  sm:bottom-[22.4vh] lg:bottom-2 left-2 bg-lime-500 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
+      className="absolute sm:h-[34.5vh] sm:w-[45vw] xl:h-[41.5vh] xl:w-[18vw]  sm:bottom-[22.4vh] xl:bottom-2 left-2 bg-lime-500 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Iconography</div>
       <div className="flex items-center justify-center w-full h-full flex-1">
@@ -42,7 +43,7 @@ function Iconography({ gridItemsRefs }: IconographyProps) {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="sm:w-1/4 lg:w-1/2 sm:h-1/2 lg:h-full text-yellow-400"
+          className="sm:w-1/4 xl:w-1/2 sm:h-1/2 xl:h-full text-yellow-400"
         >
           {/* Lock Shackle */}
           <path

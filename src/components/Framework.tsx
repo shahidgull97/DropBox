@@ -98,7 +98,7 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
       }}
       onMouseEnter={handleHover}
       onMouseLeave={handleLeave}
-      className="absolute sm:h-[20vh] sm:w-[40vw] lg:h-[55vh] lg:w-[18vw]   left-2 bg-gray-800 text-white p-1 flex flex-col justify-between hover:bg-black transition-colors duration-500 "
+      className="absolute sm:h-[20vh] sm:w-[40vw] xl:h-[55vh] xl:w-[18vw]   left-2 bg-gray-800 text-white p-1 flex flex-col justify-between hover:bg-black transition-colors duration-500 "
     >
       <div className="text-2xl font-bold">Framework</div>
       <div className="flex items-center justify-center flex-1 w-full h-full overflow-hidden">

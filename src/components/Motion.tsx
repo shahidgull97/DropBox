@@ -122,7 +122,7 @@ function Motion({ gridItemsRefs }: MotionProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="absolute sm:h-[20vh] sm:w-[50vw] lg:h-[56vh] lg:w-[18.8vw]  bottom-2 right-2 bg-purple-300 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white w-[50%] h-[50%]"
+      className="absolute sm:h-[20vh] sm:w-[47vw] xl:h-[56vh] xl:w-[18.8vw]  bottom-2 right-2 bg-purple-300 p-4 flex flex-col justify-between hover:bg-black transition-colors duration-500 text-white "
     >
       <div className="text-2xl font-bold">Motion</div>
       <div className="flex items-center justify-center flex-1 w-full h-full overflow-visible ">
@@ -130,7 +130,7 @@ function Motion({ gridItemsRefs }: MotionProps) {
           ref={svgRef}
           viewBox="0 0 100 100"
           preserveAspectRatio="xMidYMid meet"
-          className=" sm:h-1/2 lg:w-full lg:h-full overflow-visible "
+          className=" sm:h-1/2 xl:w-full xl:h-full overflow-visible "
         >
           <path
             ref={pathRef}
