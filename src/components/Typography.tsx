@@ -6,7 +6,6 @@ interface TypographyProps {
 }
 function Typography({ gridItemsRefs }: TypographyProps) {
   const textRef = useRef<HTMLSpanElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseEnter = () => {
     gsap.to(textRef.current, {

@@ -104,7 +104,9 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
           {/* Straight Lines (Initially Visible) */}
           <path
             ref={(el) => {
-              el && (straightLinesRef.current[0] = el);
+              if (el) {
+                straightLinesRef.current[0] = el;
+              }
             }}
             d="M10 20 L90 60"
             stroke="white"
@@ -114,7 +116,9 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
           />
           <path
             ref={(el) => {
-              el && (straightLinesRef.current[1] = el);
+              if (el) {
+                straightLinesRef.current[1] = el;
+              }
             }}
             d="M10 110 L90 60"
             stroke="white"
@@ -126,7 +130,9 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
           {/* Curved Paths (Initially Hidden, Appear on Hover) */}
           <path
             ref={(el) => {
-              el && (curvedLinesRef.current[0] = el);
+              if (el) {
+                curvedLinesRef.current[0] = el;
+              }
             }}
             d="M10 20 Q50 5, 80 50"
             stroke="white"
@@ -139,7 +145,9 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
           />
           <polygon
             ref={(el) => {
-              el && (arrowRef.current[0] = el);
+              if (el) {
+                curvedLinesRef.current[0] = el;
+              }
             }}
             points="85,48 85,55 77,54"
             fill="none"
@@ -150,7 +158,9 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
 
           <path
             ref={(el) => {
-              el && (curvedLinesRef.current[1] = el);
+              if (el) {
+                curvedLinesRef.current[1] = el;
+              }
             }}
             d="M90 60 Q50 120, 23 110"
             stroke="white"
@@ -163,7 +173,9 @@ function Framework({ gridItemsRefs }: FrameworkProps) {
           />
           <polygon
             ref={(el) => {
-              el && (arrowRef.current[1] = el);
+              if (el) {
+                curvedLinesRef.current[1] = el;
+              }
             }}
             points="23,105 15,110 23,115"
             fill="none"
